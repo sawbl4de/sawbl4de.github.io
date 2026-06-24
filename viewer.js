@@ -57,7 +57,11 @@ class Viewer {
       geo.computeVertexNormals();
       const mesh=new THREE.Mesh(geo, new THREE.MeshStandardMaterial({color:0xAEBED2,metalness:0.35,roughness:0.5}));
       mesh.add(new THREE.LineSegments(new THREE.EdgesGeometry(geo,28), new THREE.LineBasicMaterial({color:0x5c9dff,transparent:true,opacity:0.16})));
-      const grp=new THREE.Group(); grp.add(mesh); grp.rotation.x=-Math.PI/2; // CAD z-up
+      const grp=new THREE.Group(); grp.add(mesh);
+      const rx = this.el.dataset.rotateX !== undefined ? +(this.el.dataset.rotateX) : -90;
+      const ry = +(this.el.dataset.rotateY || 0);
+      const rz = +(this.el.dataset.rotateZ || 0);
+      grp.rotation.set(rx*Math.PI/180, ry*Math.PI/180, rz*Math.PI/180);
       this.scene.add(grp); this.current=grp; this.frame(grp); this.setStatus('');
     }, undefined, ()=>this.setStatus('Model not found — add the .stl and update data-src'));
   }
@@ -73,7 +77,10 @@ class Viewer {
           parts.push({mesh:ch, name:ch.name||`part_${i+1}`, color}); i++;
         }
       });
-      this.scene.add(obj); this.current=obj; this.frame(obj); this.setStatus('');
+      this.scene.add(obj);
+      const rx=+(this.el.dataset.rotateX||0), ry=+(this.el.dataset.rotateY||0), rz=+(this.el.dataset.rotateZ||0);
+      obj.rotation.set(rx*Math.PI/180, ry*Math.PI/180, rz*Math.PI/180);
+      this.current=obj; this.frame(obj); this.setStatus('');
       if(onParts) onParts(parts);
     }, undefined, ()=>this.setStatus('Assembly not found — export as .obj and update data-src'));
   }
@@ -94,20 +101,41 @@ document.querySelectorAll('.stl-switcher').forEach(sw=>{
   sel.addEventListener('change',load); load();
 });
 
-// OBJ assemblies with component toggles
+// OBJ assemblies with component toggles + exploded view
 document.querySelectorAll('.obj-viewer').forEach(el=>{
   const v=new Viewer(el);
-  const legend=el.closest('.viewer-frame').querySelector('.components');
+  const frame=el.closest('.viewer-frame');
+  const legend=frame.querySelector('.components');
+  const slider=frame.querySelector('.explode-slider');
   v.loadOBJ(el.dataset.src, parts=>{
-    if(!legend) return;
-    legend.innerHTML='<div class="comp-head">Components</div>';
-    parts.forEach(p=>{
-      const row=document.createElement('label'); row.className='comp';
-      const cb=document.createElement('input'); cb.type='checkbox'; cb.checked=true;
-      cb.addEventListener('change',()=>{ p.mesh.visible=cb.checked; });
-      const dot=document.createElement('span'); dot.className='cdot'; dot.style.background='#'+p.color.toString(16).padStart(6,'0');
-      const nm=document.createElement('span'); nm.className='cname'; nm.textContent=p.name;
-      row.append(cb,dot,nm); legend.appendChild(row);
-    });
+    // component on/off list
+    if(legend){
+      legend.innerHTML='<div class="comp-head">Components</div>';
+      parts.forEach(p=>{
+        const row=document.createElement('label'); row.className='comp';
+        const cb=document.createElement('input'); cb.type='checkbox'; cb.checked=true;
+        cb.addEventListener('change',()=>{ p.mesh.visible=cb.checked; });
+        const dot=document.createElement('span'); dot.className='cdot'; dot.style.background='#'+p.color.toString(16).padStart(6,'0');
+        const nm=document.createElement('span'); nm.className='cname'; nm.textContent=p.name;
+        row.append(cb,dot,nm); legend.appendChild(row);
+      });
+    }
+    // exploded view: push each part outward from the assembly centre
+    if(slider){
+      const finite=v=>isFinite(v.x)&&isFinite(v.y)&&isFinite(v.z);
+      // assembly centre from parts that actually have geometry
+      const ac=new THREE.Box3();
+      parts.forEach(p=>{ p.mesh.geometry.computeBoundingBox(); const bb=p.mesh.geometry.boundingBox; if(bb&&finite(bb.min)&&finite(bb.max)) ac.union(bb); });
+      const center=ac.isEmpty()?new THREE.Vector3():ac.getCenter(new THREE.Vector3());
+      parts.forEach(p=>{
+        const bb=p.mesh.geometry.boundingBox; const c=new THREE.Vector3();
+        if(bb&&finite(bb.min)&&finite(bb.max)) bb.getCenter(c);   // empty body -> stays at origin
+        p.dir=c.sub(center);
+        if(!finite(p.dir)) p.dir.set(0,0,0);                      // never write NaN into a position
+      });
+      const scale = +(el.dataset.explodeScale || 0.8);
+      const apply=()=>{ const t=(+slider.value||0)/100; parts.forEach(p=>p.mesh.position.set(p.dir.x*t*scale,p.dir.y*t*scale,p.dir.z*t*scale)); };
+      slider.addEventListener('input',apply); apply();
+    }
   });
 });
