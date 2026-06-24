@@ -295,6 +295,10 @@ section {
     border-right: 1px solid var(--line);
     height: 100%;
   }
+
+  .card.lead .card-body {
+    justify-content: center;
+  }
 }
 
 .thumb {
@@ -677,9 +681,12 @@ figcaption {
   position: relative
 }
 
-.video-frame video {
+.video-frame video,
+.video-frame iframe {
   width: 100%;
-  display: block
+  aspect-ratio: 16/9;
+  display: block;
+  border: 0;
 }
 
 .video-frame .ph {
@@ -1258,7 +1265,8 @@ select.model-select:focus {
 .subproj {
   border-left: 2px solid var(--accent);
   padding-left: 18px;
-  margin-top: 8px
+  margin-top: 8px;
+  margin-bottom: 24px;
 }
 
 .subproj h3 {
@@ -1430,5 +1438,56 @@ input.explode-slider::-moz-range-thumb {
   .intro-grid {
     grid-template-columns: 1fr;
     gap: 28px;
+  }
+}
+
+/* SCARA and 6-DOF highlights and outcomes custom layout */
+.highlights-container {
+  margin-top: 28px;
+}
+
+.scara-highlights-p1,
+.sixdof-highlights {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.scara-highlights-p2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.outcomes-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.outcomes-row .outcome-item {
+  margin-bottom: 0;
+}
+
+@media(max-width: 900px) {
+
+  .scara-highlights-p1,
+  .sixdof-highlights {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .scara-highlights-p2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width: 600px) {
+
+  .scara-highlights-p1,
+  .scara-highlights-p2,
+  .sixdof-highlights,
+  .outcomes-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 }
