@@ -1029,17 +1029,29 @@ footer h2 {
   color: var(--ink);
   text-decoration: none;
   display: flex;
-  gap: 14px;
-  align-items: baseline
+  gap: 10px;
+  align-items: center
 }
 
 .contacts a:hover {
   color: var(--accent)
 }
 
+.contact-icon {
+  width: 15px;
+  height: 15px;
+  color: var(--faint);
+  flex-shrink: 0;
+  transition: color 0.15s ease;
+}
+
+.contacts a:hover .contact-icon {
+  color: var(--accent);
+}
+
 .contacts a .ck {
   color: var(--faint);
-  min-width: 64px
+  min-width: 80px
 }
 
 .colophon {
