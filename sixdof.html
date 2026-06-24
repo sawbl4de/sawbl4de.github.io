@@ -24,10 +24,10 @@
 
   <nav class="topbar">
     <div class="wrap">
-      <a class="brand" href="index.html"><span class="dot"></span>PRITHU · P · DAS</a>
-      <div class="navlinks"><a href="auxetics.html">Auxetics</a><a href="sma.html">SMA</a><a
-          href="gearbox.html">Gearbox</a><a href="scara1.html">SCARA 1</a><a href="scara2.html">SCARA 2</a><a
-          href="sixdof.html">6-DOF</a><a href="index.html#contact">Contact</a></div>
+      <a class="brand" href="index.html"><span class="dot"></span>PRITHU PARESH</a>
+      <div class="navlinks"><a href="auxetics.html">Auxetics</a><a href="gearbox.html">Gearbox</a><a
+          href="sma.html">SMA</a><a href="scara1.html">SCARA</a><a href="sixdof.html">6-DOF</a><a
+          href="index.html#contact">Contact</a></div>
     </div>
   </nav>
 
@@ -55,23 +55,35 @@
           implementing ROS 2 integrations, URDF corrections, and closed-loop torque-control algorithms on a commercial
           manipulator.</p>
 
-        <div class="block-label" style="margin-top: 28px;">Quick highlights</div>
-        <ul class="highlights-list">
-          <li><strong>Platform Integration:</strong> Worked on the AgileX PiPER 6-DOF robotic arm as a hardware research
-            platform.</li>
-          <li><strong>URDF Calibration:</strong> Corrected the robot's Unified Robot Description Format (URDF) file,
-            including joint axes, link frames, and inertial parameters.</li>
-          <li><strong>Digital Twin:</strong> Built a ROS 2 + Gazebo digital twin environment for safe trajectory testing
-            before hardware deployment.</li>
-          <li><strong>Rigid Body Dynamics:</strong> Used the Pinocchio library for efficient multi-body dynamics
-            computation and joint torque estimation.</li>
-          <li><strong>Torque Control:</strong> Implemented inverse-dynamics torque-control experiments using live joint
-            feedback.</li>
-          <li><strong>Experimental Validation:</strong> Tested trajectory tracking accuracy, gravity compensation, and
-            external-disturbance response.</li>
-          <li><strong>Platform Roadmap:</strong> Developed the platform toward impedance control, task-space control,
-            and sim-to-real manipulation experiments.</li>
-        </ul>
+        <div class="intro-grid">
+          <div>
+            <div class="block-label" style="margin-bottom: 12px;">Quick highlights</div>
+            <ul class="highlights-list" style="margin-top: 0;">
+              <li><strong>Platform Integration:</strong> Worked on the AgileX PiPER 6-DOF robotic arm as a hardware research platform.</li>
+              <li><strong>URDF Calibration:</strong> Corrected the robot's Unified Robot Description Format (URDF) file, including joint axes, link frames, and inertial parameters.</li>
+              <li><strong>Digital Twin:</strong> Built a ROS 2 + Gazebo digital twin environment for safe trajectory testing before hardware deployment.</li>
+              <li><strong>Rigid Body Dynamics:</strong> Used the Pinocchio library for efficient multi-body dynamics computation and joint torque estimation.</li>
+              <li><strong>Torque Control:</strong> Implemented inverse-dynamics torque-control experiments using live joint feedback.</li>
+              <li><strong>Experimental Validation:</strong> Tested trajectory tracking accuracy, gravity compensation, and external-disturbance response.</li>
+              <li><strong>Platform Roadmap:</strong> Developed the platform toward impedance control, task-space control, and sim-to-real manipulation experiments.</li>
+            </ul>
+          </div>
+          <div>
+            <div class="block-label" style="margin-bottom: 12px;">Key outcomes</div>
+            <div class="outcome-card">
+              <div class="outcome-item">
+                <span class="outcome-label label">Dynamics modeling</span>
+                <span class="outcome-val">Pinocchio Integration</span>
+                <p class="outcome-desc">Computed exact rigid body multi-body dynamics for real-time joint torque estimation.</p>
+              </div>
+              <div class="outcome-item">
+                <span class="outcome-label label">Control methods</span>
+                <span class="outcome-val">Torque Control</span>
+                <p class="outcome-desc">Successfully validated inverse-dynamics controls and disturbance response on hardware.</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
