@@ -1,169 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Auxetic Structures — Prithu Paresh Das</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Asap:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<script type="importmap">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auxetic Structures — Prithu Paresh Das</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Asap:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">
 { "imports": {
   "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
   "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
 }}
 </script>
 </head>
+
 <body>
 
-<nav class="topbar"><div class="wrap">
-  <a class="brand" href="index.html"><span class="dot"></span>PRITHU PARESH</a>
-  <div class="navlinks"><a href="auxetics.html">Auxetics</a><a href="sma.html">SMA</a><a href="gearbox.html">Gearbox</a><a href="scara1.html">SCARA 1</a><a href="scara2.html">SCARA 2</a><a href="sixdof.html">6-DOF</a><a href="index.html#contact">Contact</a></div>
-</div></nav>
-
-<header class="proj-head"><div class="wrap">
-  <a class="backlink" href="index.html">← All work</a>
-  <h1>Auxetic structures</h1>
-  <p class="proj-sub">End-to-end design, fabrication, and characterization of re-entrant lattices that grow wider when stretched — a negative Poisson's ratio — with a journal manuscript in preparation.</p>
-  <div class="proj-meta">
-    <div class="pm"><span class="k label">Role</span><span class="v">Design · fabrication · FEA · testing</span></div>
-    <div class="pm"><span class="k label">Designs</span><span class="v">5 lattices + holder</span></div>
-    <div class="pm"><span class="k label">Status</span><span class="v">Manuscript in prep.</span></div>
-  </div>
-</div></header>
-
-<main>
-
-<section class="block"><div class="wrap">
-  <p>Auxetic metamaterials get their behaviour from geometry, not chemistry: a re-entrant unit cell unfolds under load so the structure expands laterally as it is pulled. I worked the full loop across five designs — parameterising each cell, generating the lattice in CAD, running FEA, fabricating samples, and measuring the response on a universal testing machine.</p>
-</div></section>
-
-<!-- SECTION: photos & videos -->
-<!-- SECTION: CAD renders (2x2 gallery) -->
-<section class="block"><div class="wrap">
-  <div class="block-label">CAD renders — 4 designs</div>
-  <div class="media-grid media-grid--single-column">
-    <figure>
-      <img src="images/swastik_aux.png" alt="Auxetic CAD design 1">
-      <figcaption>Swastik Pattern</figcaption>
-    </figure>
-    <figure>
-      <img src="images/double_arrowhead_aux.png" alt="Auxetic CAD design 2">
-      <figcaption>Double Arrowhead Pattern</figcaption>
-    </figure>
-    <figure>
-      <img src="images/bowtie_aux.png" alt="Auxetic CAD design 3">
-      <figcaption>Rectangular Bowtie Pattern</figcaption>
-    </figure>
-    <figure>
-      <img src="images/star_honeycomb_aux.png" alt="Auxetic CAD design 4">
-      <figcaption>Star Honeycomb Pattern</figcaption>
-    </figure>
-  </div>
-</div></section>
-
-<!-- SECTION: STL models with dropdown -->
-<section class="block"><div class="wrap">
-  <div class="block-label">3D models — FEA geometry (5)</div>
-  <div class="stl-switcher">
-    <div class="switcher-bar"><span class="lbl">Model</span>
-      <select class="model-select">
-        <option value="models/star_v2.stl">Star Honeycomb</option>
-        <option value="models/swastik_v2.stl">Swastik</option>
-        <option value="models/bowtie_v2.stl">Rectangular Bowtie</option>
-      </select>
+  <nav class="topbar">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="dot"></span>PRITHU PARESH</a>
+      <div class="navlinks"><a href="auxetics.html">Auxetics</a><a href="sma.html">SMA</a><a
+          href="gearbox.html">Gearbox</a><a href="scara1.html">SCARA 1</a><a href="scara2.html">SCARA 2</a><a
+          href="sixdof.html">6-DOF</a><a href="index.html#contact">Contact</a></div>
     </div>
-    <div class="viewer-frame">
-      <div class="vcorner tl"></div><div class="vcorner tr"></div><div class="vcorner bl"></div><div class="vcorner br"></div>
-      <div class="hud"><span class="pulse"></span>STL Viewer . Specimen</div>
-      <div class="vstatus"></div>
-      <div class="stl-viewer"></div>
+  </nav>
+
+  <header class="proj-head">
+    <div class="wrap">
+      <a class="backlink" href="index.html">← All work</a>
+      <h1>Auxetic structures</h1>
+      <p class="proj-sub">End-to-end design, fabrication, and characterization of re-entrant lattices that grow wider
+        when stretched — a negative Poisson's ratio — with a journal manuscript in preparation.</p>
+      <div class="proj-meta">
+        <div class="pm"><span class="k label">Role</span><span class="v">Design · fabrication · FEA · testing</span>
+        </div>
+        <div class="pm"><span class="k label">Designs</span><span class="v">5 lattices + holder</span></div>
+        <div class="pm"><span class="k label">Status</span><span class="v">Manuscript in prep.</span></div>
+      </div>
     </div>
-  </div>
-</div></section>
+  </header>
 
-<section class="block"><div class="wrap">
-  <div class="block-label">Photos &amp; video</div>
-  <div class="media-grid media-grid--asymmetric">
-    <figure class="photo-left">
-      <img src="images/laser_cutting.png" alt="Laser cutting auxetic samples">
-      <figcaption>Laser cutting</figcaption>
-    </figure>
-    <figure class="photo-left">
-      <img src="images/test_sample.png" alt="Auxetic test sample">
-      <figcaption>Test Sample</figcaption>
-    </figure>
-    <figure class="photo-left">
-      <img src="images/patent.png" alt="Patent documentation">
-      <figcaption>Filed Patent</figcaption>
-    </figure>
-    <figure class="photo-right">
-      <img src="images/presentation.jpeg" alt="Presenting at COPEN13">
-      <figcaption>Research Poster</figcaption>
-    </figure>
-  </div>
-  <div class="videos-grid" style="margin-top:24px">
-    <div class="video-frame video-frame--portrait">
-      <video width="100%" controls style="display:block;">
-        <source src="videos/laser_cutting.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <figcaption style="margin-top:12px;text-align:center">Laser Cutting of the Auxetics</figcaption>
+  <main>
+
+    <section class="block">
+      <div class="wrap">
+        <p>Auxetic metamaterials get their behaviour from geometry, not chemistry: a re-entrant unit cell unfolds under
+          load so the structure expands laterally as it is pulled. I worked the full loop across five designs —
+          parameterising each cell, generating the lattice in CAD, running FEA, fabricating samples, and measuring the
+          response on a universal testing machine.</p>
+      </div>
+    </section>
+
+    <!-- SECTION: photos & videos -->
+    <!-- SECTION: CAD renders (2x2 gallery) -->
+    <section class="block">
+      <div class="wrap">
+        <div class="block-label">CAD renders — 4 designs</div>
+        <div class="media-grid media-grid--single-column">
+          <figure>
+            <img src="images/swastik_aux.png" alt="Auxetic CAD design 1">
+            <figcaption>Swastik Pattern</figcaption>
+          </figure>
+          <figure>
+            <img src="images/double_arrowhead_aux.png" alt="Auxetic CAD design 2">
+            <figcaption>Double Arrowhead Pattern</figcaption>
+          </figure>
+          <figure>
+            <img src="images/bowtie_aux.png" alt="Auxetic CAD design 3">
+            <figcaption>Rectangular Bowtie Pattern</figcaption>
+          </figure>
+          <figure>
+            <img src="images/star_honeycomb_aux.png" alt="Auxetic CAD design 4">
+            <figcaption>Star Honeycomb Pattern</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: STL models with dropdown -->
+    <section class="block">
+      <div class="wrap">
+        <div class="block-label">3D models — FEA geometry (5)</div>
+        <div class="stl-switcher">
+          <div class="switcher-bar"><span class="lbl">Model</span>
+            <select class="model-select">
+              <option value="models/star_v2.stl">Star Honeycomb</option>
+              <option value="models/swastik_v2.stl">Swastik</option>
+              <option value="models/bowtie_v2.stl">Rectangular Bowtie</option>
+            </select>
+          </div>
+          <div class="viewer-frame">
+            <div class="vcorner tl"></div>
+            <div class="vcorner tr"></div>
+            <div class="vcorner bl"></div>
+            <div class="vcorner br"></div>
+            <div class="hud"><span class="pulse"></span>STL Viewer· Scroll · Rotate</div>
+            <div class="vstatus"></div>
+            <div class="stl-viewer"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="wrap">
+        <div class="block-label">Photos &amp; video</div>
+        <div class="media-grid media-grid--asymmetric">
+          <figure class="photo-left">
+            <img src="images/laser_cutting.png" alt="Laser cutting auxetic samples">
+            <figcaption>Laser cutting</figcaption>
+          </figure>
+          <figure class="photo-left">
+            <img src="images/test_sample.png" alt="Auxetic test sample">
+            <figcaption>Test Sample</figcaption>
+          </figure>
+          <figure class="photo-left">
+            <img src="images/patent.png" alt="Patent documentation">
+            <figcaption>Filed Patent</figcaption>
+          </figure>
+          <figure class="photo-right">
+            <img src="images/presentation.jpeg" alt="Presenting at COPEN13">
+            <figcaption>Research Poster</figcaption>
+          </figure>
+        </div>
+        <div class="videos-grid" style="margin-top:24px">
+          <div class="video-frame video-frame--portrait">
+            <video width="100%" controls style="display:block;">
+              <source src="videos/laser_cutting.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <figcaption style="margin-top:12px;text-align:center">Laser Cutting of the Auxetics</figcaption>
+          </div>
+          <div class="video-frame">
+            <video width="100%" controls style="display:block;">
+              <source src="videos/auxetic_testing.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <figcaption style="margin-top:12px;text-align:center">Test Setup on the Electrodynamic Shaker</figcaption>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: holder sub-project -->
+    <section class="block">
+      <div class="wrap">
+        <div class="block-label">Sample holder</div>
+        <div class="subproj">
+          <span class="sp-tag">Sub-assembly</span>
+          <h3>Test-specimen holder</h3>
+          <p style="margin-top:8px;color:#C4CCD6;max-width:64ch">A dedicated holder to grip the auxetic samples squarely
+            in the UTM so the measured response reflects the lattice, not the fixturing.</p>
+        </div>
+        <div class="viewer-frame" style="margin-top:20px">
+          <div class="vcorner tl"></div>
+          <div class="vcorner tr"></div>
+          <div class="vcorner bl"></div>
+          <div class="vcorner br"></div>
+          <div class="hud"><span class="pulse"></span>STL Viewer · Scroll · Rotate</div>
+          <div class="vstatus"></div>
+          <div class="stl-viewer" data-src="models/holder.stl" style="height:460px"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: spec + impact -->
+    <section class="block">
+      <div class="wrap">
+        <div class="block-label">Materials · equipment · processes</div>
+        <div class="specsheet">
+          <div class="row">
+            <div class="sk">Cell type</div>
+            <div class="sv">Re-entrant honeycomb (negative Poisson's ratio)</div>
+          </div>
+          <div class="row">
+            <div class="sk">Materials</div>
+            <div class="sv">Acrylic · FDM polymer lattices</div>
+          </div>
+          <div class="row">
+            <div class="sk">Equipment</div>
+            <div class="sv">Laser cutter · FDM printer · universal testing machine</div>
+          </div>
+          <div class="row">
+            <div class="sk">Processes</div>
+            <div class="sv">CAD · FEA · laser cutting · FDM printing · assembly · tensile testing</div>
+          </div>
+        </div>
+        <div class="block-label" style="margin-top:28px">Impact / outcome</div>
+        <p>Five validated lattice designs with measured negative-Poisson's-ratio behaviour, feeding a journal manuscript
+          in preparation. The work sits close to deformable-structure and soft-object problems in robotics.</p>
+
+        <div class="pager">
+          <a class="prev" href="index.html"><span class="lbl">Back</span>All work</a>
+          <a class="next" href="sma.html"><span class="lbl">Next project</span>SMA actuators →</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="contact">
+    <div class="wrap">
+      <div class="foot-grid">
+        <h2>Let's talk<br>hardware.</h2>
+        <div class="contacts">
+          <a href="mailto:pareshp@umich.edu"><span class="ck">Email</span><span class="cv">pareshp@umich.edu</span></a>
+          <a href="https://github.com/sawbl4de" target="_blank" rel="noopener"><span class="ck">GitHub</span><span
+              class="cv">github.com/sawbl4de</span></a>
+        </div>
+      </div>
+      <p class="colophon">Designed &amp; built by Prithu Paresh Das · Last updated June 2026</p>
     </div>
-    <div class="video-frame">
-      <video width="100%" controls style="display:block;">
-        <source src="videos/auxetic_testing.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <figcaption style="margin-top:12px;text-align:center">Test Setup on the Electrodynamic Shaker</figcaption>
-    </div>
-  </div>
-</div></section>
+  </footer>
 
-<!-- SECTION: holder sub-project -->
-<section class="block"><div class="wrap">
-  <div class="block-label">Sample holder</div>
-  <div class="subproj">
-    <span class="sp-tag">Sub-assembly</span>
-    <h3>Test-specimen holder</h3>
-    <p style="margin-top:8px;color:#C4CCD6;max-width:64ch">A dedicated holder to grip the auxetic samples squarely in the UTM so the measured response reflects the lattice, not the fixturing.</p>
-  </div>
-  <div class="viewer-frame" style="margin-top:20px">
-    <div class="vcorner tl"></div><div class="vcorner tr"></div><div class="vcorner bl"></div><div class="vcorner br"></div>
-    <div class="hud"><span class="pulse"></span>STL Viewer · holder</div>
-    <div class="vstatus"></div>
-    <div class="stl-viewer" data-src="models/holder.stl" style="height:460px"></div>
-  </div>
-</div></section>
-
-<!-- SECTION: spec + impact -->
-<section class="block"><div class="wrap">
-  <div class="block-label">Materials · equipment · processes</div>
-  <div class="specsheet">
-    <div class="row"><div class="sk">Cell type</div><div class="sv">Re-entrant honeycomb (negative Poisson's ratio)</div></div>
-    <div class="row"><div class="sk">Materials</div><div class="sv">Acrylic · FDM polymer lattices</div></div>
-    <div class="row"><div class="sk">Equipment</div><div class="sv">Laser cutter · FDM printer · universal testing machine</div></div>
-    <div class="row"><div class="sk">Processes</div><div class="sv">CAD · FEA · laser cutting · FDM printing · assembly · tensile testing</div></div>
-  </div>
-  <div class="block-label" style="margin-top:28px">Impact / outcome</div>
-  <p>Five validated lattice designs with measured negative-Poisson's-ratio behaviour, feeding a journal manuscript in preparation. The work sits close to deformable-structure and soft-object problems in robotics.</p>
-
-  <div class="pager">
-    <a class="prev" href="index.html"><span class="lbl">Back</span>All work</a>
-    <a class="next" href="sma.html"><span class="lbl">Next project</span>SMA actuators →</a>
-  </div>
-</div></section>
-
-</main>
-
-<footer id="contact"><div class="wrap">
-  <div class="foot-grid"><h2>Let's talk<br>hardware.</h2>
-    <div class="contacts">
-      <a href="mailto:pareshp@umich.edu"><span class="ck">Email</span><span class="cv">pareshp@umich.edu</span></a>
-      <a href="https://github.com/sawbl4de" target="_blank" rel="noopener"><span class="ck">GitHub</span><span class="cv">github.com/sawbl4de</span></a>
-    </div></div>
-  <p class="colophon">Designed &amp; built by Prithu Paresh Das · Last updated June 2026</p>
-</div></footer>
-
-<script type="module" src="viewer.js"></script>
+  <script type="module" src="viewer.js"></script>
 </body>
+
 </html>

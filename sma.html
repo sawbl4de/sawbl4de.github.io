@@ -1,115 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SMA Actuators — Prithu Paresh Das</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Asap:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<script type="importmap">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMA Actuators — Prithu Paresh Das</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Asap:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .media-grid img {
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+  </style>
+  <script type="importmap">
 { "imports": {
   "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
   "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
 }}
 </script>
 </head>
+
 <body>
 
-<nav class="topbar"><div class="wrap">
-  <a class="brand" href="index.html"><span class="dot"></span>PRITHU PARESH</a>
-  <div class="navlinks"><a href="auxetics.html">Auxetics</a><a href="sma.html">SMA</a><a href="gearbox.html">Gearbox</a><a href="scara1.html">SCARA 1</a><a href="scara2.html">SCARA 2</a><a href="sixdof.html">6-DOF</a><a href="index.html#contact">Contact</a></div>
-</div></nav>
+  <nav class="topbar">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="dot"></span>PRITHU PARESH</a>
+      <div class="navlinks"><a href="auxetics.html">Auxetics</a><a href="sma.html">SMA</a><a
+          href="gearbox.html">Gearbox</a><a href="scara1.html">SCARA 1</a><a href="scara2.html">SCARA 2</a><a
+          href="sixdof.html">6-DOF</a><a href="index.html#contact">Contact</a></div>
+    </div>
+  </nav>
 
-<header class="proj-head"><div class="wrap">
-  <a class="backlink" href="index.html">← All work</a>
-  <h1>SMA actuators</h1>
-  <p class="proj-sub">Shape-memory alloy work in two parts: a NiTinol actuator for louvre flaps, and a custom machine for coiling SMA springs.</p>
-  <div class="proj-meta">
-    <div class="pm"><span class="k label">Material</span><span class="v">NiTinol</span></div>
-    <div class="pm"><span class="k label">Analysis</span><span class="v">DSC · XRD</span></div>
-    <div class="pm"><span class="k label">Outputs</span><span class="v">Actuator + coiling rig</span></div>
-  </div>
-</div></header>
+  <header class="proj-head">
+    <div class="wrap">
+      <a class="backlink" href="index.html">← All work</a>
+      <h1>SMA actuators</h1>
+      <p class="proj-sub">Shape-memory alloy work in two parts: a NiTinol actuator for louvre flaps, and a custom
+        machine for coiling SMA springs.</p>
+      <div class="proj-meta">
+        <div class="pm"><span class="k label">Material</span><span class="v">NiTinol</span></div>
+        <div class="pm"><span class="k label">Analysis</span><span class="v">DSC · XRD</span></div>
+        <div class="pm"><span class="k label">Outputs</span><span class="v">Actuator + coiling rig</span></div>
+      </div>
+    </div>
+  </header>
 
-<main>
+  <main>
 
-<!-- SECTION: sub-project 1 -->
-<section class="block"><div class="wrap">
-  <div class="subproj"><span class="sp-tag">① Actuator</span><h3>SMA-based actuator for louvre flaps</h3>
-    <p style="margin-top:8px;color:#C4CCD6;max-width:64ch">A shape-memory actuator that drives louvre flaps — NiTinol elements that recover their set shape on heating to move the flap, removing the need for a conventional motor. <em style="color:var(--faint)">(Add detail: stroke, force, actuation temperature, mounting.)</em></p>
-  </div>
-  <div class="media-grid" style="margin-top:20px">
-    <div class="ph">images/louvre-1.jpg — actuator on the flap</div>
-    <div class="ph">images/louvre-2.jpg — open / closed states</div>
-  </div>
-  <div class="video-frame" style="margin-top:14px">
-    <video controls playsinline preload="metadata" style="max-width:100%;height:auto">
-      <source src="videos/sma_actuator.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <figcaption class="video-caption">Louvre actuator contracting on heating - filmed during bench testing.</figcaption>
-  </div>
-  <div class="dl-row">
-    <a class="dl" href="drawings/louvre.dwg" download>Drawing <span class="ext">.dwg</span></a>
-    <a class="dl" href="models/louvre.stl" download>Model <span class="ext">.stl</span></a>
-  </div>
-</div></section>
+    <!-- SECTION: sub-project 1 -->
+    <section class="block">
+      <div class="wrap">
+        <div class="subproj"><span class="sp-tag">① Actuator</span>
+          <h3>SMA-based actuator for louvre flaps</h3>
+          <p style="margin-top:8px;color:#C4CCD6;max-width:64ch">A motor-free shape-memory actuator that automates the
+            opening and closing of louvre flaps. Built as a proof-of-concept for energy-efficient smart building
+            envelopes (reducing cooling costs by up to 30% and heating by 10-30%), the system utilizes electrical
+            resistive heating to contract custom-wound NiTinol springs and actuate the mechanical assembly, resetting
+            automatically via a bias spring upon cooling.</p>
 
-<!-- SECTION: sub-project 2 -->
-<section class="block"><div class="wrap">
-  <div class="subproj"><span class="sp-tag">② Machine</span><h3>SMA spring-coiling machine</h3>
-    <p style="margin-top:8px;color:#C4CCD6;max-width:64ch">A custom rig to wind SMA springs from straight wire — controlled pitch and diameter so the coils are repeatable before the high-temperature shape-set. <em style="color:var(--faint)">(Add detail: wire size, mandrel range, drive.)</em></p>
-  </div>
-  <div class="media-grid" style="margin-top:20px">
-    <div class="ph">images/coiler-1.jpg — the machine</div>
-    <div class="ph">images/coiler-2.jpg — a coiled spring</div>
-  </div>
-  <div class="video-frame" style="margin-top:14px">
-    <div class="ph">videos/coiling.mp4 — winding a spring</div>
-  </div>
-  <div class="dl-row">
-    <a class="dl" href="drawings/coiler.dwg" download>Drawing <span class="ext">.dwg</span></a>
-    <a class="dl" href="models/coiler.stl" download>Model <span class="ext">.stl</span></a>
-  </div>
-</div></section>
+          <div
+            style="margin-top:24px; display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:28px;">
+            <div>
+              <h4
+                style="color:var(--ink); font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; font-family:var(--mono); margin-bottom:12px; border-bottom:1px solid var(--line); padding-bottom:6px;">
+                Spring Design Specifications</h4>
+              <div class="row"
+                style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.06); font-size:14px;">
+                <span style="color:var(--faint); font-family:var(--mono); font-size:12px;">Deflection
+                  (Stroke)</span><span style="color:var(--ink); font-weight:500;">20 mm</span>
+              </div>
+              <div class="row"
+                style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.06); font-size:14px;">
+                <span style="color:var(--faint); font-family:var(--mono); font-size:12px;">Actuation Force</span><span
+                  style="color:var(--ink); font-weight:500;">3 N</span>
+              </div>
+              <div class="row"
+                style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.06); font-size:14px;">
+                <span style="color:var(--faint); font-family:var(--mono); font-size:12px;">Active Coils (n)</span><span
+                  style="color:var(--ink); font-weight:500;">14 <span
+                    style="color:var(--faint); font-style:italic; font-size:12px;">(16 total)</span></span>
+              </div>
+              <div class="row"
+                style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.06); font-size:14px;">
+                <span style="color:var(--faint); font-family:var(--mono); font-size:12px;">Coil Diameters</span><span
+                  style="color:var(--ink); font-weight:500;">D = 9 mm / d = 1 mm</span>
+              </div>
+              <div class="row"
+                style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.06); font-size:14px;">
+                <span style="color:var(--faint); font-family:var(--mono); font-size:12px;">Shear Moduli (G)</span><span
+                  style="color:var(--ink); font-weight:500;">23 GPa <span
+                    style="color:var(--faint); font-size:12px;">(Aust)</span> / 8 GPa <span
+                    style="color:var(--faint); font-size:12px;">(Mart)</span></span>
+              </div>
+            </div>
+            <div>
+              <h4
+                style="color:var(--ink); font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; font-family:var(--mono); margin-bottom:12px; border-bottom:1px solid var(--line); padding-bottom:6px;">
+                Fabrication &amp; Components</h4>
+              <div class="row"
+                style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.06); font-size:14px;">
+                <span style="color:var(--faint); font-family:var(--mono); font-size:12px;">Nitinol Springs</span><span
+                  style="color:var(--ink); font-weight:500; font-style:italic; text-align:right;">Wound, shape-set at
+                  450°C, quenched</span>
+              </div>
+              <div class="row"
+                style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.06); font-size:14px;">
+                <span style="color:var(--faint); font-family:var(--mono); font-size:12px;">Vertebrae Guides</span><span
+                  style="color:var(--ink); font-weight:500; font-style:italic; text-align:right;">CAD-designed &amp;
+                  laser-cut</span>
+              </div>
+              <div class="row"
+                style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.06); font-size:14px;">
+                <span style="color:var(--faint); font-family:var(--mono); font-size:12px;">Louvre Flaps</span><span
+                  style="color:var(--ink); font-weight:500; font-style:italic; text-align:right;">Sheared and
+                  drilled</span>
+              </div>
+              <div class="row"
+                style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.06); font-size:14px;">
+                <span style="color:var(--faint); font-family:var(--mono); font-size:12px;">Supports</span><span
+                  style="color:var(--ink); font-weight:500; font-style:italic; text-align:right;">Laser-cut, drilled,
+                  welded</span>
+              </div>
+              <div class="row"
+                style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.06); font-size:14px;">
+                <span style="color:var(--faint); font-family:var(--mono); font-size:12px;">Sliding Shaft</span><span
+                  style="color:var(--ink); font-weight:500; font-style:italic; text-align:right;">Precision turned &amp;
+                  ground</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="media-grid" style="margin-top:24px">
+          <figure>
+            <img src="images/actuator_top.png" alt="SMA Actuator top view assembly">
+            <figcaption>Assembled housing showing sliding shaft and spring attachment (top view)</figcaption>
+          </figure>
+          <figure>
+            <img src="images/actuator_front.png" alt="SMA Actuator front view assembly">
+            <figcaption>Assembled louvre flap actuator (front view)</figcaption>
+          </figure>
+        </div>
+        <div class="media-grid" style="margin-top:28px">
+          <figure>
+            <img src="images/sma_spring.png" alt="Coiled Nitinol SMA spring">
+            <figcaption>Custom-wound Nitinol SMA spring (16 total coils)</figcaption>
+          </figure>
+          <figure>
+            <img src="images/vertebrae.png" alt="Laser-cut vertebrae">
+            <figcaption>Laser-cut vertebrae component for guide alignment</figcaption>
+          </figure>
+        </div>
+        <div class="block-label" style="margin-top:48px; margin-bottom:20px;">Actuation video demonstration</div>
+        <div class="video-frame" style="margin-top:0">
+          <video controls playsinline preload="metadata" style="max-width:100%;height:auto">
+            <source src="videos/sma_actuator.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <figcaption class="video-caption">Louvre actuator contracting on heating - filmed during bench testing.
+          </figcaption>
+        </div>
+        <div class="dl-row">
+          <a class="dl" href="drawings/louvre.dwg" download>Drawing <span class="ext">.dwg</span></a>
+          <a class="dl" href="models/louvre.stl" download>Model <span class="ext">.stl</span></a>
+        </div>
+      </div>
+    </section>
 
-<!-- SECTION: characterization -->
-<section class="block"><div class="wrap">
-  <div class="block-label">Characterization</div>
-  <div class="media-grid">
-    <div class="ph">images/sma-dsc.png — DSC transformation peaks</div>
-    <div class="ph">images/sma-xrd.png — XRD phase pattern</div>
-  </div>
-</div></section>
+    <!-- SECTION: sub-project 2 -->
+    <section class="block">
+      <div class="wrap">
+        <div class="subproj"><span class="sp-tag">② Machine</span>
+          <h3>SMA spring-coiling machine</h3>
+          <p style="margin-top:8px;color:#C4CCD6;max-width:64ch">A custom winding rig designed to form Nitinol wire into
+            precise helical spring shapes around custom mandrels. The system ensures consistent wire tension and pitch
+            control before the coiled spring goes into a furnace for shape-setting at 450°C followed by a water quench,
+            producing highly repeatable mechanical responses.</p>
+        </div>
+        <div class="media-grid" style="margin-top:20px">
+          <div class="ph">images/coiler-1.jpg — the machine</div>
+          <div class="ph">images/coiler-2.jpg — a coiled spring</div>
+        </div>
+        <div class="video-frame" style="margin-top:14px">
+          <div class="ph">videos/coiling.mp4 — winding a spring</div>
+        </div>
+        <div class="dl-row">
+          <a class="dl" href="drawings/coiler.dwg" download>Drawing <span class="ext">.dwg</span></a>
+          <a class="dl" href="models/coiler.stl" download>Model <span class="ext">.stl</span></a>
+        </div>
+      </div>
+    </section>
 
-<!-- SECTION: spec + impact -->
-<section class="block"><div class="wrap">
-  <div class="block-label">Materials · equipment · processes</div>
-  <div class="specsheet">
-    <div class="row"><div class="sk">Material</div><div class="sv">NiTinol (shape-memory alloy)</div></div>
-    <div class="row"><div class="sk">Equipment</div><div class="sv">High-temp furnace · coiling rig · DSC · XRD</div></div>
-    <div class="row"><div class="sk">Processes</div><div class="sv">Spring coiling · furnace shape-setting · actuator integration</div></div>
-  </div>
-  <div class="block-label" style="margin-top:28px">Impact / outcome</div>
-  <p>A motor-free actuation route for louvre flaps, plus the in-house tooling to make repeatable SMA springs that feed it.</p>
+    <!-- SECTION: spec + impact -->
+    <section class="block">
+      <div class="wrap">
+        <div class="block-label">Materials · equipment · processes</div>
+        <div class="specsheet">
+          <div class="row">
+            <div class="sk">Material</div>
+            <div class="sv">NiTinol (shape-memory alloy) · Steel shaft &amp; supports · Sheet metal</div>
+          </div>
+          <div class="row">
+            <div class="sk">Equipment</div>
+            <div class="sv">Coiling rig · Furnace (450°C) · Laser cutter · Lathe · Grinder · Drill press · Welder ·
+              Shearing machine</div>
+          </div>
+          <div class="row">
+            <div class="sk">Processes</div>
+            <div class="sv">Mandrel winding · Shape setting · Water quenching · Laser cutting · Shearing · Drilling ·
+              Welding · Turning · Grinding</div>
+          </div>
+        </div>
+        <div class="block-label" style="margin-top:28px">Impact / outcome</div>
+        <p>A motor-free actuation route for louvre flaps, plus the in-house tooling to make repeatable SMA springs that
+          feed it.</p>
 
-  <div class="pager">
-    <a class="prev" href="auxetics.html"><span class="lbl">Previous</span>← Auxetic structures</a>
-    <a class="next" href="gearbox.html"><span class="lbl">Next project</span>Single-stage gearbox →</a>
-  </div>
-</div></section>
+        <div class="pager">
+          <a class="prev" href="auxetics.html"><span class="lbl">Previous</span>← Auxetic structures</a>
+          <a class="next" href="gearbox.html"><span class="lbl">Next project</span>Single-stage gearbox →</a>
+        </div>
+      </div>
+    </section>
 
-</main>
+  </main>
 
-<footer id="contact"><div class="wrap">
-  <div class="foot-grid"><h2>Let's talk<br>hardware.</h2>
-    <div class="contacts">
-      <a href="mailto:pareshp@umich.edu"><span class="ck">Email</span><span class="cv">pareshp@umich.edu</span></a>
-      <a href="https://github.com/sawbl4de" target="_blank" rel="noopener"><span class="ck">GitHub</span><span class="cv">github.com/sawbl4de</span></a>
-    </div></div>
-  <p class="colophon">Designed &amp; built by Prithu Paresh Das · Last updated June 2026</p>
-</div></footer>
+  <footer id="contact">
+    <div class="wrap">
+      <div class="foot-grid">
+        <h2>Let's talk<br>hardware.</h2>
+        <div class="contacts">
+          <a href="mailto:pareshp@umich.edu"><span class="ck">Email</span><span class="cv">pareshp@umich.edu</span></a>
+          <a href="https://github.com/sawbl4de" target="_blank" rel="noopener"><span class="ck">GitHub</span><span
+              class="cv">github.com/sawbl4de</span></a>
+        </div>
+      </div>
+      <p class="colophon">Designed &amp; built by Prithu Paresh Das · Last updated June 2026</p>
+    </div>
+  </footer>
 
-<script type="module" src="viewer.js"></script>
+  <script type="module" src="viewer.js"></script>
 </body>
+
 </html>
