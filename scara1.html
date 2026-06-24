@@ -1,92 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SCARA 1 — IISc Thesis — Prithu Paresh Das</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Asap:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<script type="importmap">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Micron-Scale Visual Servoing — IISc — Prithu Paresh Das</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Asap:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+
+    .media-grid img {
+      aspect-ratio: 4 / 3;
+      object-fit: contain;
+      width: 100%;
+    }
+
+    .pipeline-large-flow {
+      margin: 20px auto 0;
+      width: 55%;
+    }
+
+    @media(max-width: 760px) {
+      .pipeline-large-flow {
+        width: 100%;
+      }
+    }
+
+    .pipeline-large-flow img {
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--line);
+      background: var(--bg-2);
+      display: block;
+    }
+
+    .pipeline-large-flow figcaption {
+      font-family: var(--display);
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+      color: var(--ink);
+      margin-top: 10px;
+      letter-spacing: -.01em;
+    }
+  </style>
+  <script type="importmap">
 { "imports": {
   "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
   "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
 }}
 </script>
 </head>
+
 <body>
 
-<nav class="topbar"><div class="wrap">
-  <a class="brand" href="index.html"><span class="dot"></span>PRITHU · P · DAS</a>
-  <div class="navlinks"><a href="auxetics.html">Auxetics</a><a href="sma.html">SMA</a><a href="gearbox.html">Gearbox</a><a href="scara1.html">SCARA 1</a><a href="scara2.html">SCARA 2</a><a href="sixdof.html">6-DOF</a><a href="index.html#contact">Contact</a></div>
-</div></nav>
+  <nav class="topbar">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="dot"></span>PRITHU · P · DAS</a>
+      <div class="navlinks"><a href="auxetics.html">Auxetics</a><a href="sma.html">SMA</a><a
+          href="gearbox.html">Gearbox</a><a href="scara1.html">SCARA</a><a href="sixdof.html">6-DOF</a><a
+          href="index.html#contact">Contact</a></div>
+    </div>
+  </nav>
 
-<header class="proj-head"><div class="wrap">
-  <a class="backlink" href="index.html">← All work</a>
-  <h1>SCARA 1 — IISc thesis</h1>
-  <p class="proj-sub">Image-based visual servoing (IBVS) on a Mitsubishi SCARA at IISc Bangalore, with a custom-designed part holder. The robot is a commercial platform; the servoing control and the holder are my contribution.</p>
-  <div class="proj-meta">
-    <div class="pm"><span class="k label">Lab</span><span class="v">IISc Bangalore · DACAS</span></div>
-    <div class="pm"><span class="k label">Platform</span><span class="v">Mitsubishi SCARA (commercial)</span></div>
-    <div class="pm"><span class="k label">My work</span><span class="v">IBVS control · holder design</span></div>
-  </div>
-</div></header>
+  <header class="proj-head">
+    <div class="wrap">
+      <a class="backlink" href="index.html">← All work</a>
+      <h1>SCARA robotic platforms</h1>
+      <p class="proj-sub">Two-part robotics showcase: closed-loop visual servoing on a Mitsubishi SCARA 3CRH, and an
+        end-to-end home-built SCARA prototype.</p>
+      <div class="proj-meta">
+        <div class="pm"><span class="k label">Platforms</span><span class="v">Mitsubishi SCARA 3CRH · Home-built</span>
+        </div>
+        <div class="pm"><span class="k label">Focus</span><span class="v">Research controls · Mech design</span></div>
+        <div class="pm"><span class="k label">Area</span><span class="v">Robotics &amp; automation</span></div>
+      </div>
+    </div>
+  </header>
 
-<main>
+  <main>
 
-<section class="block"><div class="wrap">
-  <p>Image-based visual servoing closes the control loop directly on features in the camera image rather than on estimated pose. On the Mitsubishi SCARA I implemented the servoing scheme as my thesis work, and designed a holder to present parts to the robot repeatably.</p>
-</div></section>
+    <!-- SECTION: Sub-project 1 (Research) -->
+    <section class="block">
+      <div class="wrap">
+        <div class="subproj"><span class="sp-tag">① Research</span>
+          <h3>Micron-scale visual servoing</h3>
+        </div>
+        <ul class="highlights-list" style="margin-top:20px">
+          <li><strong>Platform Integration:</strong> Developed closed-loop controls on a Mitsubishi SCARA 3CRH
+            manipulator at IISc Bangalore's OUSUMS Lab.</li>
+          <li><strong>High-Precision Assembly:</strong> Machined a custom high-precision alignment end-effector and
+            parts holder for transferring 2D material heterostructures.</li>
+          <li><strong>Control Paradigm Shift:</strong> Replaced traditional open-loop commands with a dynamic
+            closed-loop Image-Based Visual Servoing (IBVS) pipeline.</li>
+          <li><strong>Visual Feedback:</strong> Bypassed complex joint/task space transformations using direct camera
+            feedback to calculate error coordinates.</li>
+          <li><strong>Sub-Micron Repeatability:</strong> Successfully eliminated cumulative positioning errors,
+            achieving repeatable manipulation precision of 1–2 microns.</li>
+          <li><strong>Fragile Material Handling:</strong> Minimized sudden accelerations and overshoot, ensuring zero
+            damage to delicate 2D material flakes.</li>
+          <li><strong>Efficiency Breakthrough:</strong> Slashed the time required for semi-automated transfer from 20
+            minutes down to just 2 minutes.</li>
+        </ul>
+      </div>
+    </section>
 
-<!-- SECTION: setup photo -->
-<section class="block"><div class="wrap">
-  <div class="block-label">Setup</div>
-  <div class="media-grid">
-    <div class="ph">images/scara1-setup.jpg — SCARA + camera rig</div>
-    <div class="ph">images/scara1-tracking.png — feature tracking / results</div>
-  </div>
-</div></section>
+    <!-- SECTION: 3D Models (STL Viewers) -->
+    <section class="block">
+      <div class="wrap">
+        <div class="block-label">3D models — holder design</div>
+        <div class="media-grid">
 
-<!-- SECTION: holder design (DWG + screenshots) -->
-<section class="block"><div class="wrap">
-  <div class="block-label">Holder design</div>
-  <div class="media-grid">
-    <div class="dwg-item"><div class="dwg-view"><span class="ph">drawings/scara1-holder.png</span></div><div class="dwg-foot"><span class="nm">Holder drawing</span><a href="drawings/scara1-holder.dwg" download>.dwg ↓</a></div></div>
-    <div class="ph">images/scara1-holder-cad.png — CAD screenshot</div>
-  </div>
-  <div class="dl-row">
-    <a class="dl" href="drawings/scara1-holder.dwg" download>Holder drawing <span class="ext">.dwg</span></a>
-  </div>
-</div></section>
+          <div class="viewer-frame">
+            <div class="vcorner tl"></div>
+            <div class="vcorner tr"></div>
+            <div class="vcorner bl"></div>
+            <div class="vcorner br"></div>
+            <div class="hud"><span class="pulse"></span>STL Viewer · isometric view</div>
+            <div class="vstatus"></div>
+            <div class="stl-viewer" data-src="models/v4.stl" data-rotate-x="-60" data-rotate-y="30"
+              style="height:520px"></div>
+          </div>
 
-<!-- SECTION: spec + impact -->
-<section class="block"><div class="wrap">
-  <div class="block-label">Materials · equipment · processes</div>
-  <div class="specsheet">
-    <div class="row"><div class="sk">Platform</div><div class="sv">Mitsubishi SCARA (commercial robot)</div></div>
-    <div class="row"><div class="sk">Sensing</div><div class="sv">Camera (image-based feedback)</div></div>
-    <div class="row"><div class="sk">My contribution</div><div class="sv">IBVS control implementation · part-holder design (DWG/CAD)</div></div>
-    <div class="row"><div class="sk">Processes</div><div class="sv">Control design · holder fabrication</div></div>
-  </div>
-  <div class="block-label" style="margin-top:28px">Impact / outcome</div>
-  <p>A working visual-servoing pipeline on the SCARA, completed as undergraduate thesis work, with a repeatable fixturing solution for the experiments.</p>
+          <div class="viewer-frame">
+            <div class="vcorner tl"></div>
+            <div class="vcorner tr"></div>
+            <div class="vcorner bl"></div>
+            <div class="vcorner br"></div>
+            <div class="hud"><span class="pulse"></span>STL Viewer · isometric view</div>
+            <div class="vstatus"></div>
+            <div class="stl-viewer" data-src="models/v8.stl" data-rotate-x="120" data-rotate-y="30"
+              style="height:520px">
+            </div>
+          </div>
 
-  <div class="pager">
-    <a class="prev" href="gearbox.html"><span class="lbl">Previous</span>← Single-stage gearbox</a>
-    <a class="next" href="scara2.html"><span class="lbl">Next project</span>SCARA 2 →</a>
-  </div>
-</div></section>
+        </div>
+        <div class="dl-row">
+          <a class="dl" href="models/v4.stl" download>Download v1 Model <span class="ext">.stl</span></a>
+          <a class="dl" href="models/v8.stl" download>Download v2 Model <span class="ext">.stl</span></a>
+        </div>
+      </div>
+    </section>
 
-</main>
+    <!-- SECTION: Video section (2 videos) -->
+    <section class="block">
+      <div class="wrap">
+        <div class="block-label">Video Demos</div>
+        <div class="video-frame">
+          <video controls playsinline preload="metadata" style="max-width:100%;height:auto">
+            <source src="videos/scara-tracking.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <figcaption class="video-caption">Trajectory tracking under closed-loop visual feedback</figcaption>
+        </div>
+        <div class="video-frame" style="margin-top:20px">
+          <video controls playsinline preload="metadata" style="max-width:100%;height:auto">
+            <source src="videos/scara-transfer.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <figcaption class="video-caption">Automated 2D material transfer &amp; stacking pipeline demo</figcaption>
+        </div>
+      </div>
+    </section>
 
-<footer id="contact"><div class="wrap">
-  <div class="foot-grid"><h2>Let's talk<br>hardware.</h2>
-    <div class="contacts">
-      <a href="mailto:pareshp@umich.edu"><span class="ck">Email</span><span class="cv">pareshp@umich.edu</span></a>
-      <a href="https://github.com/sawbl4de" target="_blank" rel="noopener"><span class="ck">GitHub</span><span class="cv">github.com/sawbl4de</span></a>
-    </div></div>
-  <p class="colophon">Designed &amp; built by Prithu Paresh Das · Last updated June 2026</p>
-</div></footer>
+    <!-- SECTION: Hardware & Pipeline Images -->
+    <section class="block">
+      <div class="wrap">
+        <div class="block-label">Design &amp; Media Focus</div>
+        <div class="media-grid">
+          <figure>
+            <img src="images/end_effector.png" alt="Custom high-precision alignment end-effector">
+            <figcaption>Custom high-precision alignment end-effector</figcaption>
+          </figure>
+          <figure>
+            <img src="images/RH-3CRH_SCARA_robot.png" alt="Mitsubishi SCARA 3CRH manipulator assembly">
+            <figcaption>Mitsubishi SCARA 3CRH manipulator assembly</figcaption>
+          </figure>
+        </div>
+        <div class="media-grid" style="margin-top:20px">
+          <figure>
+            <img src="images/scara_expt_setup.png" alt="Camera rig and experimental physical setup">
+            <figcaption>Camera rig and experimental physical setup</figcaption>
+          </figure>
+          <figure>
+            <img src="images/scara_flake.png" alt="20x magnification of target 2D material flake to be picked up">
+            <figcaption>20x magnification of target 2D material flake to be picked up</figcaption>
+          </figure>
+        </div>
+        <figure class="pipeline-large-flow">
+          <img src="images/scara-pipeline.png" alt="Image-Based Visual Servoing (IBVS) control pipeline flow">
+          <figcaption>Image-Based Visual Servoing (IBVS) control pipeline flow</figcaption>
+        </figure>
+      </div>
+    </section>
 
-<script type="module" src="viewer.js"></script>
+    <!-- SECTION: Sub-project 2 (Home-Built SCARA) -->
+    <section class="block">
+      <div class="wrap">
+        <div class="subproj"><span class="sp-tag">② Prototype</span>
+          <h3>Home-Built SCARA Robot</h3>
+          <p style="margin-top:8px;color:#C4CCD6;max-width:64ch">A hands-on SCARA robot prototype built to explore
+            mechanism design, assembly, and planar robotic motion.</p>
+        </div>
+        <ul class="highlights-list" style="margin-top:20px">
+          <li><strong>Hardware Prototyping:</strong> Built a basic SCARA-style robot from scratch as a hardware
+            prototyping project.</li>
+          <li><strong>Mechanical Design:</strong> Focused on mechanical layout, link design, joint placement, and
+            actuation.</li>
+          <li><strong>Planar Kinematics:</strong> Explored planar robot motion through a compact physical prototype.
+          </li>
+          <li><strong>Full Assembly:</strong> Designed and assembled the base, links, joints, and end-effector
+            structure.</li>
+          <li><strong>Design Principles:</strong> Used the project to understand workspace, alignment, mechanical
+            tolerances, and motion constraints.</li>
+          <li><strong>Foundation:</strong> Acts as an early design foundation before the later Mitsubishi SCARA research
+            work.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECTION: spec + impact -->
+    <section class="block">
+      <div class="wrap">
+        <div class="block-label">Specifications &amp; parameters</div>
+        <div class="specsheet">
+          <div class="row">
+            <div class="sk">Platforms</div>
+            <div class="sv">Mitsubishi SCARA 3CRH · Home-built SCARA prototype</div>
+          </div>
+          <div class="row">
+            <div class="sk">Lab / Affiliation</div>
+            <div class="sv">IISc Bangalore · OUSUMS Lab (Physics Dept.) / Course project</div>
+          </div>
+          <div class="row">
+            <div class="sk">Key Methods</div>
+            <div class="sv">Closed-loop Image-Based Visual Servoing (IBVS) · Linkage &amp; joint design</div>
+          </div>
+          <div class="row">
+            <div class="sk">Target Accuracy</div>
+            <div class="sv">1 – 2 microns (on research platform)</div>
+          </div>
+          <div class="row">
+            <div class="sk">Tooling &amp; Setup</div>
+            <div class="sv">Custom end-effector · camera rig · custom alignment part holder</div>
+          </div>
+        </div>
+        <div class="block-label" style="margin-top:28px">Impact / outcome</div>
+        <p>Combined deep control engineering research with hands-on mechanical prototyping. Proved sub-micron stacking
+          repeatability via IBVS while establishing first-principles kinematics and tolerance constraints through a
+          physical SCARA build.</p>
+
+        <div class="pager">
+          <a class="prev" href="gearbox.html"><span class="lbl">Previous</span>← Single-stage gearbox</a>
+          <a class="next" href="sixdof.html"><span class="lbl">Next project</span>6-DOF manipulator →</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="contact">
+    <div class="wrap">
+      <div class="foot-grid">
+        <h2>Let's talk<br>hardware.</h2>
+        <div class="contacts">
+          <a href="mailto:pareshp@umich.edu"><span class="ck">Email</span><span class="cv">pareshp@umich.edu</span></a>
+          <a href="https://github.com/sawbl4de" target="_blank" rel="noopener"><span class="ck">GitHub</span><span
+              class="cv">github.com/sawbl4de</span></a>
+        </div>
+      </div>
+      <p class="colophon">Designed &amp; built by Prithu Paresh Das · Last updated June 2026</p>
+    </div>
+  </footer>
+
+  <script type="module" src="viewer.js"></script>
 </body>
+
 </html>

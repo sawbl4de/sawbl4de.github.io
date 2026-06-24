@@ -1,79 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>6-DOF Manipulator — Prithu Paresh Das</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Asap:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6-DOF PiPER Manipulator — Prithu Paresh Das</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Asap:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .media-grid img {
+      aspect-ratio: 4 / 3;
+      object-fit: contain;
+      width: 100%;
+    }
+  </style>
 </head>
+
 <body>
 
-<nav class="topbar"><div class="wrap">
-  <a class="brand" href="index.html"><span class="dot"></span>PRITHU · P · DAS</a>
-  <div class="navlinks"><a href="auxetics.html">Auxetics</a><a href="sma.html">SMA</a><a href="gearbox.html">Gearbox</a><a href="scara1.html">SCARA 1</a><a href="scara2.html">SCARA 2</a><a href="sixdof.html">6-DOF</a><a href="index.html#contact">Contact</a></div>
-</div></nav>
+  <nav class="topbar">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="dot"></span>PRITHU · P · DAS</a>
+      <div class="navlinks"><a href="auxetics.html">Auxetics</a><a href="sma.html">SMA</a><a
+          href="gearbox.html">Gearbox</a><a href="scara1.html">SCARA 1</a><a href="scara2.html">SCARA 2</a><a
+          href="sixdof.html">6-DOF</a><a href="index.html#contact">Contact</a></div>
+    </div>
+  </nav>
 
-<header class="proj-head"><div class="wrap">
-  <a class="backlink" href="index.html">← All work</a>
-  <h1>6-DOF manipulator — torque control</h1>
-  <p class="proj-sub">Torque-control work on a commercial 6-DOF arm from Agilex Robotics. This is a robotics/controls project — the robot is an off-the-shelf platform, not a build of mine.</p>
-  <div class="proj-meta">
-    <div class="pm"><span class="k label">Platform</span><span class="v">Agilex Robotics (commercial)</span></div>
-    <div class="pm"><span class="k label">My work</span><span class="v">Torque control</span></div>
-    <div class="pm"><span class="k label">Area</span><span class="v">Robotics / controls</span></div>
-  </div>
-</div></header>
+  <header class="proj-head">
+    <div class="wrap">
+      <a class="backlink" href="index.html">← All work</a>
+      <h1>6-DOF PiPER Manipulator</h1>
+      <p class="proj-sub">Dynamics modeling, ROS 2 simulation, and torque-control experiments on a 6-DOF robotic
+        manipulator.</p>
+      <div class="proj-meta">
+        <div class="pm"><span class="k label">Platform</span><span class="v">AgileX PiPER (commercial)</span></div>
+        <div class="pm"><span class="k label">My work</span><span class="v">Dynamics &amp; control</span></div>
+        <div class="pm"><span class="k label">Area</span><span class="v">Robotics / controls</span></div>
+      </div>
+    </div>
+  </header>
 
-<main>
+  <main>
 
-<section class="block"><div class="wrap">
-  <p>On a pre-built Agilex 6-DOF manipulator I worked on joint torque control — commanding and regulating joint torques rather than positions. The contribution here is on the control and robotics side; the hardware itself is a commercial unit. <em style="color:var(--faint)">(Add detail: controller, what you tested, results.)</em></p>
-</div></section>
+    <section class="block">
+      <div class="wrap">
+        <p>This project was focused on robotics software, dynamics modeling, and control systems. While it <b><u>did not
+              involve any mechanical design or fabrication of physical hardware</u></b>, it served as a critical
+          platform for
+          implementing ROS 2 integrations, URDF corrections, and closed-loop torque-control algorithms on a commercial
+          manipulator.</p>
 
-<!-- SECTION: video / results -->
-<section class="block"><div class="wrap">
-  <div class="block-label">Video</div>
-  <div class="video-frame">
-    <div class="ph">videos/sixdof.mp4 — torque-controlled motion</div>
-  </div>
-</div></section>
+        <div class="block-label" style="margin-top: 28px;">Quick highlights</div>
+        <ul class="highlights-list">
+          <li><strong>Platform Integration:</strong> Worked on the AgileX PiPER 6-DOF robotic arm as a hardware research
+            platform.</li>
+          <li><strong>URDF Calibration:</strong> Corrected the robot's Unified Robot Description Format (URDF) file,
+            including joint axes, link frames, and inertial parameters.</li>
+          <li><strong>Digital Twin:</strong> Built a ROS 2 + Gazebo digital twin environment for safe trajectory testing
+            before hardware deployment.</li>
+          <li><strong>Rigid Body Dynamics:</strong> Used the Pinocchio library for efficient multi-body dynamics
+            computation and joint torque estimation.</li>
+          <li><strong>Torque Control:</strong> Implemented inverse-dynamics torque-control experiments using live joint
+            feedback.</li>
+          <li><strong>Experimental Validation:</strong> Tested trajectory tracking accuracy, gravity compensation, and
+            external-disturbance response.</li>
+          <li><strong>Platform Roadmap:</strong> Developed the platform toward impedance control, task-space control,
+            and sim-to-real manipulation experiments.</li>
+        </ul>
+      </div>
+    </section>
 
-<section class="block"><div class="wrap">
-  <div class="block-label">Setup &amp; results</div>
-  <div class="media-grid">
-    <div class="ph">images/sixdof-arm.jpg — the Agilex arm</div>
-    <div class="ph">images/sixdof-plot.png — torque tracking plot</div>
-  </div>
-</div></section>
+    <!-- SECTION: video / demo -->
+    <section class="block">
+      <div class="wrap">
+        <div class="block-label">Video Demos</div>
+        <div class="video-frame">
+          <video controls playsinline preload="metadata" style="max-width:100%;height:auto">
+            <source src="videos/6dof_control.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <figcaption class="video-caption">Trajectory tracking and joint space control demonstration</figcaption>
+        </div>
+        <div class="video-frame" style="margin-top:20px">
+          <video controls playsinline preload="metadata" style="max-width:100%;height:auto">
+            <source src="videos/6dof_fun.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <figcaption class="video-caption">A little fun!</figcaption>
+        </div>
+      </div>
+    </section>
 
-<!-- SECTION: spec + impact -->
-<section class="block"><div class="wrap">
-  <div class="block-label">Equipment · methods</div>
-  <div class="specsheet">
-    <div class="row"><div class="sk">Platform</div><div class="sv">Agilex Robotics 6-DOF manipulator (commercial)</div></div>
-    <div class="row"><div class="sk">My contribution</div><div class="sv">Joint torque control (no hardware design/fabrication)</div></div>
-    <div class="row"><div class="sk">Methods</div><div class="sv">Control implementation · testing on hardware</div></div>
-  </div>
-  <div class="block-label" style="margin-top:28px">Impact / outcome</div>
-  <p>Hands-on experience implementing and validating torque control on a real 6-DOF arm — useful robotics context alongside the fabrication work elsewhere in this portfolio.</p>
+    <!-- SECTION: setup & simulation -->
+    <section class="block">
+      <div class="wrap">
+        <div class="block-label">Design &amp; Media Focus — Setup &amp; Simulation</div>
+        <div class="media-grid">
+          <figure>
+            <img src="images/6dof_setup.png" alt="Experimental robot setup of AgileX PiPER 6-DOF manipulator">
+            <figcaption>Experimental robot setup of AgileX PiPER 6-DOF manipulator</figcaption>
+          </figure>
+          <figure>
+            <img src="images/6dof_urdf.png" alt="Gazebo simulation model and corrected URDF visualisation">
+            <figcaption>Gazebo simulation model and corrected URDF visualisation</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
 
-  <div class="pager">
-    <a class="prev" href="scara2.html"><span class="lbl">Previous</span>← SCARA 2</a>
-    <a class="next" href="index.html"><span class="lbl">Back</span>All work →</a>
-  </div>
-</div></section>
+    <!-- SECTION: spec + impact -->
+    <section class="block">
+      <div class="wrap">
+        <div class="block-label">Equipment · methods</div>
+        <div class="specsheet">
+          <div class="row">
+            <div class="sk">Platform</div>
+            <div class="sv">AgileX PiPER 6-DOF robotic manipulator (commercial)</div>
+          </div>
+          <div class="row">
+            <div class="sk">Software Stack</div>
+            <div class="sv">ROS 2 · Gazebo · Pinocchio</div>
+          </div>
+          <div class="row">
+            <div class="sk">My contribution</div>
+            <div class="sv">URDF correction · Gazebo digital twin · inverse-dynamics torque control</div>
+          </div>
+          <div class="row">
+            <div class="sk">Experiments</div>
+            <div class="sv">Trajectory tracking · gravity compensation · disturbance response</div>
+          </div>
+        </div>
+        <div class="block-label" style="margin-top:28px">Impact / outcome</div>
+        <p>Validated inverse-dynamics torque-control on hardware, backed by a high-fidelity ROS 2 digital twin and
+          precise multi-body dynamics computed via Pinocchio.</p>
 
-</main>
+        <div class="pager">
+          <a class="prev" href="scara2.html"><span class="lbl">Previous</span>← SCARA 2</a>
+          <a class="next" href="index.html"><span class="lbl">Back</span>All work →</a>
+        </div>
+      </div>
+    </section>
 
-<footer id="contact"><div class="wrap">
-  <div class="foot-grid"><h2>Let's talk<br>hardware.</h2>
-    <div class="contacts">
-      <a href="mailto:pareshp@umich.edu"><span class="ck">Email</span><span class="cv">pareshp@umich.edu</span></a>
-      <a href="https://github.com/sawbl4de" target="_blank" rel="noopener"><span class="ck">GitHub</span><span class="cv">github.com/sawbl4de</span></a>
-    </div></div>
-  <p class="colophon">Designed &amp; built by Prithu Paresh Das · Last updated June 2026</p>
-</div></footer>
+  </main>
+
+  <footer id="contact">
+    <div class="wrap">
+      <div class="foot-grid">
+        <h2>Let's talk<br>hardware.</h2>
+        <div class="contacts">
+          <a href="mailto:pareshp@umich.edu"><span class="ck">Email</span><span class="cv">pareshp@umich.edu</span></a>
+          <a href="https://github.com/sawbl4de" target="_blank" rel="noopener"><span class="ck">GitHub</span><span
+              class="cv">github.com/sawbl4de</span></a>
+        </div>
+      </div>
+      <p class="colophon">Designed &amp; built by Prithu Paresh Das · Last updated June 2026</p>
+    </div>
+  </footer>
 
 </body>
+
 </html>

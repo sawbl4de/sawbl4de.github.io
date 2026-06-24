@@ -1,0 +1,15 @@
+
+# macOS junk files
+.DS_Store
+*/.DS_Store
+
+# Private / application-only PDFs
+pdfs/UMich SOP.pdf
+
+# Large local media files - keep locally, upload/embed later
+pdfs/Portfolio PDF Links.pdf
+videos/6dof_fun.mp4
+videos/6dof_control.mp4
+videos/scara-tracking.mp4
+videos/scara-transfer.mp4
+videos/laser_cutting_orig.mp4

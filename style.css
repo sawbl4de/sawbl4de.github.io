@@ -209,8 +209,26 @@ figcaption{font-family:var(--mono);font-size:11.5px;color:var(--faint);margin-to
 
 /* prev / next */
 .pager{display:flex;justify-content:space-between;gap:16px;padding:40px 0 0}
-.pager a{font-family:var(--mono);font-size:13px;text-decoration:none;color:var(--sub);display:flex;flex-direction:column;gap:4px}
-.pager a:hover{color:var(--accent)}
+.pager a{
+  font-family:var(--mono);
+  font-size:13px;
+  text-decoration:none;
+  color:var(--sub);
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  border:1px solid var(--line);
+  padding:14px 20px;
+  background:var(--bg-2);
+  border-radius:2px;
+  min-width:180px;
+  transition:all .15s ease;
+}
+.pager a:hover{
+  color:var(--accent);
+  border-color:var(--accent);
+  background:var(--bg-3);
+}
 .pager a .lbl{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
 .pager a.next{text-align:right;margin-left:auto}
 
@@ -285,3 +303,41 @@ input.explode-slider{-webkit-appearance:none;appearance:none;width:130px;height:
 input.explode-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:14px;height:14px;border-radius:50%;background:var(--accent);cursor:pointer;border:2px solid var(--bg)}
 input.explode-slider::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--accent);cursor:pointer;border:2px solid var(--bg)}
 @media(max-width:760px){ .explode-bar{position:static;margin-top:12px} }
+
+/* Global styling for .highlights-list box cards */
+.highlights-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+.highlights-list li {
+  position: relative;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  padding: 18px 22px;
+  border-radius: 2px;
+  font-size: 15px;
+  color: var(--sub);
+  line-height: 1.55;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+.highlights-list li:hover {
+  border-color: var(--accent-soft);
+  background: var(--bg-3);
+}
+.highlights-list li strong {
+  color: var(--ink);
+  display: block;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid var(--line-soft);
+  padding-bottom: 4px;
+}
+.intro-grid .highlights-list {
+  grid-template-columns: 1fr;
+}

@@ -17,6 +17,13 @@
   "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
 }}
 </script>
+  <style>
+    .media-grid img {
+      aspect-ratio: 4 / 3;
+      object-fit: contain;
+      width: 100%;
+    }
+  </style>
 </head>
 
 <body>
@@ -25,8 +32,8 @@
     <div class="wrap">
       <a class="brand" href="index.html"><span class="dot"></span>PRITHU PARESH</a>
       <div class="navlinks"><a href="auxetics.html">Auxetics</a><a href="sma.html">SMA</a><a
-          href="gearbox.html">Gearbox</a><a href="scara1.html">SCARA 1</a><a href="scara2.html">SCARA 2</a><a
-          href="sixdof.html">6-DOF</a><a href="index.html#contact">Contact</a></div>
+          href="gearbox.html">Gearbox</a><a href="scara1.html">SCARA</a><a href="sixdof.html">6-DOF</a><a
+          href="index.html#contact">Contact</a></div>
     </div>
   </nav>
 
@@ -65,7 +72,7 @@
           <div class="vcorner br"></div>
           <div class="hud"><span class="pulse"></span>STL Viewer · gearbox</div>
           <div class="vstatus"></div>
-          <div class="stl-viewer" data-src="models/gearbox.stl" data-rotate-x="-180" data-rotate-y="90"
+          <div class="stl-viewer" data-src="models/gearbox.stl" data-rotate-x="-60" data-rotate-y="30"
             style="height:520px"></div>
         </div>
         <div class="dl-row">
@@ -124,8 +131,14 @@
       <div class="wrap">
         <div class="block-label">Build photos</div>
         <div class="media-grid">
-          <div class="ph">images/gear-cutting.jpg — cutting the teeth</div>
-          <div class="ph">images/gearbox-assembled.jpg — assembled unit</div>
+          <figure>
+            <img src="images/gearbox_fusion.png" alt="Gearbox CAD model render">
+            <figcaption>Fusion 360 CAD assembly model</figcaption>
+          </figure>
+          <figure>
+            <img src="images/gearbox_prototype1.jpg" alt="Gearbox physical prototype">
+            <figcaption>Assembled physical prototype</figcaption>
+          </figure>
         </div>
       </div>
     </section>
