@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SCARA 1 — IISc Thesis — Prithu Paresh Das</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Asap:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+}}
+</script>
+</head>
+<body>
+
+<nav class="topbar"><div class="wrap">
+  <a class="brand" href="index.html"><span class="dot"></span>PRITHU · P · DAS</a>
+  <div class="navlinks"><a href="auxetics.html">Auxetics</a><a href="sma.html">SMA</a><a href="gearbox.html">Gearbox</a><a href="scara1.html">SCARA 1</a><a href="scara2.html">SCARA 2</a><a href="sixdof.html">6-DOF</a><a href="index.html#contact">Contact</a></div>
+</div></nav>
+
+<header class="proj-head"><div class="wrap">
+  <a class="backlink" href="index.html">← All work</a>
+  <h1>SCARA 1 — IISc thesis</h1>
+  <p class="proj-sub">Image-based visual servoing (IBVS) on a Mitsubishi SCARA at IISc Bangalore, with a custom-designed part holder. The robot is a commercial platform; the servoing control and the holder are my contribution.</p>
+  <div class="proj-meta">
+    <div class="pm"><span class="k label">Lab</span><span class="v">IISc Bangalore · DACAS</span></div>
+    <div class="pm"><span class="k label">Platform</span><span class="v">Mitsubishi SCARA (commercial)</span></div>
+    <div class="pm"><span class="k label">My work</span><span class="v">IBVS control · holder design</span></div>
+  </div>
+</div></header>
+
+<main>
+
+<section class="block"><div class="wrap">
+  <p>Image-based visual servoing closes the control loop directly on features in the camera image rather than on estimated pose. On the Mitsubishi SCARA I implemented the servoing scheme as my thesis work, and designed a holder to present parts to the robot repeatably.</p>
+</div></section>
+
+<!-- SECTION: setup photo -->
+<section class="block"><div class="wrap">
+  <div class="block-label">Setup</div>
+  <div class="media-grid">
+    <div class="ph">images/scara1-setup.jpg — SCARA + camera rig</div>
+    <div class="ph">images/scara1-tracking.png — feature tracking / results</div>
+  </div>
+</div></section>
+
+<!-- SECTION: holder design (DWG + screenshots) -->
+<section class="block"><div class="wrap">
+  <div class="block-label">Holder design</div>
+  <div class="media-grid">
+    <div class="dwg-item"><div class="dwg-view"><span class="ph">drawings/scara1-holder.png</span></div><div class="dwg-foot"><span class="nm">Holder drawing</span><a href="drawings/scara1-holder.dwg" download>.dwg ↓</a></div></div>
+    <div class="ph">images/scara1-holder-cad.png — CAD screenshot</div>
+  </div>
+  <div class="dl-row">
+    <a class="dl" href="drawings/scara1-holder.dwg" download>Holder drawing <span class="ext">.dwg</span></a>
+  </div>
+</div></section>
+
+<!-- SECTION: spec + impact -->
+<section class="block"><div class="wrap">
+  <div class="block-label">Materials · equipment · processes</div>
+  <div class="specsheet">
+    <div class="row"><div class="sk">Platform</div><div class="sv">Mitsubishi SCARA (commercial robot)</div></div>
+    <div class="row"><div class="sk">Sensing</div><div class="sv">Camera (image-based feedback)</div></div>
+    <div class="row"><div class="sk">My contribution</div><div class="sv">IBVS control implementation · part-holder design (DWG/CAD)</div></div>
+    <div class="row"><div class="sk">Processes</div><div class="sv">Control design · holder fabrication</div></div>
+  </div>
+  <div class="block-label" style="margin-top:28px">Impact / outcome</div>
+  <p>A working visual-servoing pipeline on the SCARA, completed as undergraduate thesis work, with a repeatable fixturing solution for the experiments.</p>
+
+  <div class="pager">
+    <a class="prev" href="gearbox.html"><span class="lbl">Previous</span>← Single-stage gearbox</a>
+    <a class="next" href="scara2.html"><span class="lbl">Next project</span>SCARA 2 →</a>
+  </div>
+</div></section>
+
+</main>
+
+<footer id="contact"><div class="wrap">
+  <div class="foot-grid"><h2>Let's talk<br>hardware.</h2>
+    <div class="contacts">
+      <a href="mailto:pareshp@umich.edu"><span class="ck">Email</span><span class="cv">pareshp@umich.edu</span></a>
+      <a href="https://github.com/sawbl4de" target="_blank" rel="noopener"><span class="ck">GitHub</span><span class="cv">github.com/sawbl4de</span></a>
+    </div></div>
+  <p class="colophon">Designed &amp; built by Prithu Paresh Das · Last updated June 2026</p>
+</div></footer>
+
+<script type="module" src="viewer.js"></script>
+</body>
+</html>

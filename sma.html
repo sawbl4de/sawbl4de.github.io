@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SMA Actuators — Prithu Paresh Das</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Asap:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+}}
+</script>
+</head>
+<body>
+
+<nav class="topbar"><div class="wrap">
+  <a class="brand" href="index.html"><span class="dot"></span>PRITHU · P · DAS</a>
+  <div class="navlinks"><a href="auxetics.html">Auxetics</a><a href="sma.html">SMA</a><a href="gearbox.html">Gearbox</a><a href="scara1.html">SCARA 1</a><a href="scara2.html">SCARA 2</a><a href="sixdof.html">6-DOF</a><a href="index.html#contact">Contact</a></div>
+</div></nav>
+
+<header class="proj-head"><div class="wrap">
+  <a class="backlink" href="index.html">← All work</a>
+  <h1>SMA actuators</h1>
+  <p class="proj-sub">Shape-memory alloy work in two parts: a NiTinol actuator for louvre flaps, and a custom machine for coiling SMA springs.</p>
+  <div class="proj-meta">
+    <div class="pm"><span class="k label">Material</span><span class="v">NiTinol</span></div>
+    <div class="pm"><span class="k label">Analysis</span><span class="v">DSC · XRD</span></div>
+    <div class="pm"><span class="k label">Outputs</span><span class="v">Actuator + coiling rig</span></div>
+  </div>
+</div></header>
+
+<main>
+
+<!-- SECTION: sub-project 1 -->
+<section class="block"><div class="wrap">
+  <div class="subproj"><span class="sp-tag">① Actuator</span><h3>SMA-based actuator for louvre flaps</h3>
+    <p style="margin-top:8px;color:#C4CCD6;max-width:64ch">A shape-memory actuator that drives louvre flaps — NiTinol elements that recover their set shape on heating to move the flap, removing the need for a conventional motor. <em style="color:var(--faint)">(Add detail: stroke, force, actuation temperature, mounting.)</em></p>
+  </div>
+  <div class="media-grid" style="margin-top:20px">
+    <div class="ph">images/louvre-1.jpg — actuator on the flap</div>
+    <div class="ph">images/louvre-2.jpg — open / closed states</div>
+  </div>
+  <div class="video-frame" style="margin-top:14px">
+    <div class="ph">videos/louvre-actuation.mp4 — flap opening on heating</div>
+  </div>
+  <div class="dl-row">
+    <a class="dl" href="drawings/louvre.dwg" download>Drawing <span class="ext">.dwg</span></a>
+    <a class="dl" href="models/louvre.stl" download>Model <span class="ext">.stl</span></a>
+  </div>
+</div></section>
+
+<!-- SECTION: sub-project 2 -->
+<section class="block"><div class="wrap">
+  <div class="subproj"><span class="sp-tag">② Machine</span><h3>SMA spring-coiling machine</h3>
+    <p style="margin-top:8px;color:#C4CCD6;max-width:64ch">A custom rig to wind SMA springs from straight wire — controlled pitch and diameter so the coils are repeatable before the high-temperature shape-set. <em style="color:var(--faint)">(Add detail: wire size, mandrel range, drive.)</em></p>
+  </div>
+  <div class="media-grid" style="margin-top:20px">
+    <div class="ph">images/coiler-1.jpg — the machine</div>
+    <div class="ph">images/coiler-2.jpg — a coiled spring</div>
+  </div>
+  <div class="video-frame" style="margin-top:14px">
+    <div class="ph">videos/coiling.mp4 — winding a spring</div>
+  </div>
+  <div class="dl-row">
+    <a class="dl" href="drawings/coiler.dwg" download>Drawing <span class="ext">.dwg</span></a>
+    <a class="dl" href="models/coiler.stl" download>Model <span class="ext">.stl</span></a>
+  </div>
+</div></section>
+
+<!-- SECTION: characterization -->
+<section class="block"><div class="wrap">
+  <div class="block-label">Characterization</div>
+  <div class="media-grid">
+    <div class="ph">images/sma-dsc.png — DSC transformation peaks</div>
+    <div class="ph">images/sma-xrd.png — XRD phase pattern</div>
+  </div>
+</div></section>
+
+<!-- SECTION: spec + impact -->
+<section class="block"><div class="wrap">
+  <div class="block-label">Materials · equipment · processes</div>
+  <div class="specsheet">
+    <div class="row"><div class="sk">Material</div><div class="sv">NiTinol (shape-memory alloy)</div></div>
+    <div class="row"><div class="sk">Equipment</div><div class="sv">High-temp furnace · coiling rig · DSC · XRD</div></div>
+    <div class="row"><div class="sk">Processes</div><div class="sv">Spring coiling · furnace shape-setting · actuator integration</div></div>
+  </div>
+  <div class="block-label" style="margin-top:28px">Impact / outcome</div>
+  <p>A motor-free actuation route for louvre flaps, plus the in-house tooling to make repeatable SMA springs that feed it.</p>
+
+  <div class="pager">
+    <a class="prev" href="auxetics.html"><span class="lbl">Previous</span>← Auxetic structures</a>
+    <a class="next" href="gearbox.html"><span class="lbl">Next project</span>Single-stage gearbox →</a>
+  </div>
+</div></section>
+
+</main>
+
+<footer id="contact"><div class="wrap">
+  <div class="foot-grid"><h2>Let's talk<br>hardware.</h2>
+    <div class="contacts">
+      <a href="mailto:pareshp@umich.edu"><span class="ck">Email</span><span class="cv">pareshp@umich.edu</span></a>
+      <a href="https://github.com/sawbl4de" target="_blank" rel="noopener"><span class="ck">GitHub</span><span class="cv">github.com/sawbl4de</span></a>
+    </div></div>
+  <p class="colophon">Designed &amp; built by Prithu Paresh Das · Last updated June 2026</p>
+</div></footer>
+
+<script type="module" src="viewer.js"></script>
+</body>
+</html>

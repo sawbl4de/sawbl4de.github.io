@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Single-stage Gearbox — Prithu Paresh Das</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Asap:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+}}
+</script>
+</head>
+<body>
+
+<nav class="topbar"><div class="wrap">
+  <a class="brand" href="index.html"><span class="dot"></span>PRITHU · P · DAS</a>
+  <div class="navlinks"><a href="auxetics.html">Auxetics</a><a href="sma.html">SMA</a><a href="gearbox.html">Gearbox</a><a href="scara1.html">SCARA 1</a><a href="scara2.html">SCARA 2</a><a href="sixdof.html">6-DOF</a><a href="index.html#contact">Contact</a></div>
+</div></nav>
+
+<header class="proj-head"><div class="wrap">
+  <a class="backlink" href="index.html">← All work</a>
+  <h1>Single-stage gearbox</h1>
+  <p class="proj-sub">A full assembled power-transmission unit, modelled in Fusion 360 — explore it below and toggle the individual components on and off.</p>
+  <div class="proj-meta">
+    <div class="pm"><span class="k label">Role</span><span class="v">Design · machining · assembly</span></div>
+    <div class="pm"><span class="k label">Materials</span><span class="v">Mild steel · cast iron</span></div>
+    <div class="pm"><span class="k label">CAD</span><span class="v">Fusion 360</span></div>
+  </div>
+</div></header>
+
+<main>
+
+<section class="block"><div class="wrap">
+  <p>This was a from-scratch power-transmission build: defining the gear pair, producing the blanks on the lathe, cutting the teeth, and assembling a housing that holds the shafts in alignment. The model below is the full assembly — drag to rotate, scroll to zoom, and use the checklist to isolate components.</p>
+</div></section>
+
+<!-- SECTION: interactive assembly (OBJ) -->
+<section class="block"><div class="wrap">
+  <div class="block-label">Interactive assembly</div>
+  <div class="viewer-frame">
+    <div class="vcorner tl"></div><div class="vcorner tr"></div><div class="vcorner bl"></div><div class="vcorner br"></div>
+    <div class="hud"><span class="pulse"></span>OBJ · drag · scroll · toggle parts</div>
+    <div class="vstatus"></div>
+    <div class="components"></div>
+    <!-- Showing a bundled sample assembly. Export your gearbox from Fusion as OBJ, save as models/gearbox.obj, and change data-src below. -->
+    <div class="obj-viewer" data-src="assets/sample-assembly.obj" style="height:520px"></div>
+  </div>
+  <div class="dl-row">
+    <a class="dl" href="models/gearbox.obj" download>Download model <span class="ext">.obj</span></a>
+    <a class="dl" href="models/gearbox.f3z" download>Fusion archive <span class="ext">.f3z</span></a>
+  </div>
+  <figcaption>Export from Fusion → Export → OBJ (keeps separate components). The viewer colours each part and lists them top-right.</figcaption>
+</div></section>
+
+<!-- SECTION: video -->
+<section class="block"><div class="wrap">
+  <div class="block-label">Video — working</div>
+  <div class="video-frame">
+    <!-- Add videos/gearbox.mp4 then replace .ph with a <video> element -->
+    <div class="ph">videos/gearbox.mp4 — the gearbox turning under load</div>
+  </div>
+</div></section>
+
+<!-- SECTION: photos -->
+<section class="block"><div class="wrap">
+  <div class="block-label">Build photos</div>
+  <div class="media-grid">
+    <div class="ph">images/gear-cutting.jpg — cutting the teeth</div>
+    <div class="ph">images/gearbox-assembled.jpg — assembled unit</div>
+  </div>
+</div></section>
+
+<!-- SECTION: spec + impact -->
+<section class="block"><div class="wrap">
+  <div class="block-label">Materials · equipment · processes</div>
+  <div class="specsheet">
+    <div class="row"><div class="sk">Type</div><div class="sv">Single-stage spur gear reduction</div></div>
+    <div class="row"><div class="sk">Materials</div><div class="sv">Mild steel · cast iron housing</div></div>
+    <div class="row"><div class="sk">Equipment</div><div class="sv">Lathe · milling machine · gear-cutting setup</div></div>
+    <div class="row"><div class="sk">Processes</div><div class="sv">CAD (Fusion 360) · turning · gear cutting · milling · assembly</div></div>
+  </div>
+  <div class="block-label" style="margin-top:28px">Impact / outcome</div>
+  <p>A working single-stage reduction assembled from self-machined parts — end-to-end ownership from CAD model to a unit that runs.</p>
+
+  <div class="pager">
+    <a class="prev" href="sma.html"><span class="lbl">Previous</span>← SMA actuators</a>
+    <a class="next" href="scara1.html"><span class="lbl">Next project</span>SCARA 1 →</a>
+  </div>
+</div></section>
+
+</main>
+
+<footer id="contact"><div class="wrap">
+  <div class="foot-grid"><h2>Let's talk<br>hardware.</h2>
+    <div class="contacts">
+      <a href="mailto:pareshp@umich.edu"><span class="ck">Email</span><span class="cv">pareshp@umich.edu</span></a>
+      <a href="https://github.com/sawbl4de" target="_blank" rel="noopener"><span class="ck">GitHub</span><span class="cv">github.com/sawbl4de</span></a>
+    </div></div>
+  <p class="colophon">Designed &amp; built by Prithu Paresh Das · Last updated June 2026</p>
+</div></footer>
+
+<script type="module" src="viewer.js"></script>
+</body>
+</html>
