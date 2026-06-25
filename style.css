@@ -1,5 +1,5 @@
 /* ============================================================
-   Prithu Paresh Das — portfolio theme
+   Prithu Paresh Das - portfolio theme
    Dark "CAD viewport" identity. Edit tokens below to retheme.
    ============================================================ */
 :root {
@@ -12,9 +12,9 @@
   --sub: #97A1AD;
   --faint: #69727E;
   --accent: #5C9DFF;
-  /* technical blue — primary */
+  /* technical blue - primary */
   --accent-2: #5BD6C6;
-  /* cyan — interactive cues only */
+  /* cyan - interactive cues only */
   --accent-soft: rgba(92, 157, 255, .12);
   --display: 'Archivo', sans-serif;
   --body: 'Asap', system-ui, sans-serif;

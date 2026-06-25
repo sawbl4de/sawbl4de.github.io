@@ -1,4 +1,4 @@
-// viewer.js — interactive 3D viewer
+// viewer.js - interactive 3D viewer
 //  - single STL:        <div class="stl-viewer" data-src="models/part.stl"></div>
 //  - STL with dropdown: <div class="stl-switcher"><select class="model-select">...</select><div class="stl-viewer"></div></div>
 //  - OBJ assembly:      <div class="obj-viewer" data-src="models/asm.obj"></div> + sibling <div class="components"></div>
@@ -63,7 +63,7 @@ class Viewer {
       const rz = +(this.el.dataset.rotateZ || 0);
       grp.rotation.set(rx*Math.PI/180, ry*Math.PI/180, rz*Math.PI/180);
       this.scene.add(grp); this.current=grp; this.frame(grp); this.setStatus('');
-    }, undefined, ()=>this.setStatus('Model not found — add the .stl and update data-src'));
+    }, undefined, ()=>this.setStatus('Model not found - add the .stl and update data-src'));
   }
   loadOBJ(url, onParts){
     this.setStatus('Loading assembly…'); this.clear();
@@ -82,7 +82,7 @@ class Viewer {
       obj.rotation.set(rx*Math.PI/180, ry*Math.PI/180, rz*Math.PI/180);
       this.current=obj; this.frame(obj); this.setStatus('');
       if(onParts) onParts(parts);
-    }, undefined, ()=>this.setStatus('Assembly not found — export as .obj and update data-src'));
+    }, undefined, ()=>this.setStatus('Assembly not found - export as .obj and update data-src'));
   }
   _loop(){ requestAnimationFrame(()=>this._loop()); this.controls.update(); this.renderer.render(this.scene,this.camera); }
 }
