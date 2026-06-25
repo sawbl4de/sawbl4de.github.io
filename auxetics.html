@@ -31,6 +31,42 @@
       aspect-ratio: 2.25 / 1;
       object-fit: contain;
     }
+
+    .stl-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+
+    .stl-grid .viewer-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stl-grid .viewer-header {
+      font-family: var(--mono);
+      font-size: 11.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin-bottom: 8px;
+    }
+
+    .stl-grid .stl-viewer {
+      height: 320px;
+    }
+
+    @media(max-width: 900px) {
+      .stl-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .stl-grid .stl-viewer {
+        height: 360px;
+      }
+    }
   </style>
   <script type="importmap">
 { "imports": {
@@ -137,23 +173,43 @@
     <!-- SECTION: STL models with dropdown -->
     <section class="block">
       <div class="wrap">
-        <div class="block-label">3D models — FEA geometry (5)</div>
-        <div class="stl-switcher">
-          <div class="switcher-bar"><span class="lbl">Model</span>
-            <select class="model-select">
-              <option value="models/star_v2.stl">Star Honeycomb</option>
-              <option value="models/swastik_v2.stl">Swastik</option>
-              <option value="models/bowtie_v2.stl">Rectangular Bowtie</option>
-            </select>
+        <div class="block-label">3D models — FEA geometry</div>
+        <div class="stl-grid">
+          <div class="viewer-container">
+            <div class="viewer-header">Star Honeycomb</div>
+            <div class="viewer-frame">
+              <div class="vcorner tl"></div>
+              <div class="vcorner tr"></div>
+              <div class="vcorner bl"></div>
+              <div class="vcorner br"></div>
+              <div class="hud"><span class="pulse"></span>STL Viewer · rotate · scroll</div>
+              <div class="vstatus"></div>
+              <div class="stl-viewer" data-src="models/star_v2.stl" data-rotate-x="-60" data-rotate-y="30"></div>
+            </div>
           </div>
-          <div class="viewer-frame">
-            <div class="vcorner tl"></div>
-            <div class="vcorner tr"></div>
-            <div class="vcorner bl"></div>
-            <div class="vcorner br"></div>
-            <div class="hud"><span class="pulse"></span>STL Viewer · isometric view · rotate · scroll</div>
-            <div class="vstatus"></div>
-            <div class="stl-viewer" data-rotate-x="-60" data-rotate-y="30"></div>
+          <div class="viewer-container">
+            <div class="viewer-header">Swastik</div>
+            <div class="viewer-frame">
+              <div class="vcorner tl"></div>
+              <div class="vcorner tr"></div>
+              <div class="vcorner bl"></div>
+              <div class="vcorner br"></div>
+              <div class="hud"><span class="pulse"></span>STL Viewer · rotate · scroll</div>
+              <div class="vstatus"></div>
+              <div class="stl-viewer" data-src="models/swastik_v2.stl" data-rotate-x="-60" data-rotate-y="30"></div>
+            </div>
+          </div>
+          <div class="viewer-container">
+            <div class="viewer-header">Rectangular Bowtie</div>
+            <div class="viewer-frame">
+              <div class="vcorner tl"></div>
+              <div class="vcorner tr"></div>
+              <div class="vcorner bl"></div>
+              <div class="vcorner br"></div>
+              <div class="hud"><span class="pulse"></span>STL Viewer · rotate · scroll</div>
+              <div class="vstatus"></div>
+              <div class="stl-viewer" data-src="models/bowtie_v2.stl" data-rotate-x="-60" data-rotate-y="30"></div>
+            </div>
           </div>
         </div>
         <div class="dl-row">
